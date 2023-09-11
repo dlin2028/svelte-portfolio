@@ -21,10 +21,10 @@
             </div>
         </div>
         {/if}
-        <div class="absolute inset-x-0 bottom-0 text-white/50 text-lg text-center animate-bounce">
+        <a class="absolute inset-x-0 bottom-0 text-white/50 text-lg text-center animate-bounce" href="#background">
             Scroll Down
             <br>
             \/
-        </div>
+        </a>
     </div>
 </div>

@@ -43,22 +43,31 @@
 
     let tileClicked = 0;
 
+	/**
+     * @type {(number | undefined)[]}
+     */
+	var timeouts = [];
+
 	function actionWhenInViewport(e) {
 		const observer = new IntersectionObserver((entries) => {
 			if (entries[0].isIntersecting) {
 				transmissionVisible = true;
-				setTimeout(() => {
+				timeouts.push(setTimeout(() => {
 					transmissionVisible = false;
 					cardVisible = true;
-					setTimeout(() => {
+					timeouts.push(setTimeout(() => {
 						textVisible = true;
-					}, 0);
-				}, 0);
+					}, 0));
+				}, 0));
 			} else {
 				transmissionVisible = false;
 				cardVisible = false;
 				textVisible = false;
                 tileClicked = 0;
+
+				for (var i=0; i<timeouts.length; i++) {
+					clearTimeout(timeouts[i]);
+				}
 			}
 		});
 
@@ -86,21 +95,21 @@
                             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
                             <div class="xs:flex-col sm:flex w-full relative align-middle">
-								<div class="text-lg basis-1/3 text-center">
+								<div class="text-3xl basis-1/3 text-center">
 									2023
                                 </div>
-								<div class="text-lg basis-1/3 text-center">
+								<div class="text-3xl basis-1/3 text-center">
 									2022
 								</div>
-								<div class="text-lg basis-1/3 text-center">
+								<div class="text-3xl basis-1/3 text-center">
 									2021
 								</div>
 							</div>
 
                             <div class="border bg-indigo-950 w-full h-20 text-lg">
-                                <div class="flex w-full h-full justify-center hover:justify-start text-transparent hover:text-white">
-                                    <img class="h-full object-contain" src="/ece-logo.jpg" alt="ece logo" transition:fly />
-                                    <div class="absolute text-sm text-right w-full px-5">
+                                <div class="flex w-full h-full justify-center hover:justify-start text-transparent hover:text-white ">
+                                    <img class="h-full object-contain " src="/ece-logo.jpg" alt="ece logo" transition:fly />
+                                    <div class="absolute text-sm text-right w-full px-5 ">
                                         University of Illinois at Urbana Champaign <br>
                                         BS in Computer Engineering <br>
                                         Graduating May 2024 <br>
@@ -109,7 +118,7 @@
                             </div>
 
 							<div class="xs:flex-col sm:flex sm:h-1/2 relative align-middle">
-								<button class="{tileClicked == 1 ? "basis-2/3" : (tileClicked == 0 ? "basis-1/3 hover:basis-2/5" : "basis-1/6")} basis-1/3 relative flex bg-black text-white" on:click={() => {tileClicked = 1}}>
+								<button class="{tileClicked == 1 ? "basis-2/3" : (tileClicked == 0 ? "basis-1/3 hover:basis-2/5" : "basis-1/6")} basis-1/3 relative flex bg-black text-white transition-all duration-500" on:click={() => {tileClicked = 1}}>
 									<img class="h-full w-full object-contain" src="/elc-logo.jpg" alt="elc logo" />
                                     {#if tileClicked == 1}
                                         <div class="w-full bg-black text-sm">
@@ -122,7 +131,7 @@ an internship projec
                                         </div>
                                     {/if}
 								</button>
-								<button class="{tileClicked == 2 ? "basis-2/3" : (tileClicked == 0 ? "basis-1/3 hover:basis-2/5" : "basis-1/6")} relative basis-1/3 flex px-4 bg-white text-white" on:click={() => {tileClicked = 2}}>
+								<button class="{tileClicked == 2 ? "basis-2/3" : (tileClicked == 0 ? "basis-1/3 hover:basis-2/5" : "basis-1/6")} relative basis-1/3 flex px-4 bg-white text-white transition-all duration-500" on:click={() => {tileClicked = 2}}>
 									<img class="object-contain" src="/oppo-logo.png" alt="oppo logo" />
                                     {#if tileClicked == 2}
                                         <div class="w-full bg-white text-sm text-black">
@@ -135,7 +144,7 @@ an internship projec
                                         </div>
                                     {/if}
 								</button>
-								<button class="{tileClicked == 3 ? "basis-2/3" : (tileClicked == 0 ? "basis-1/3 hover:basis-2/5" : "basis-1/6")} relative bg-black flex text-white" on:click={() => {tileClicked = 3}}>
+								<button class="{tileClicked == 3 ? "basis-2/3" : (tileClicked == 0 ? "basis-1/3 hover:basis-2/5" : "basis-1/6")} relative bg-black flex text-white transition-all duration-500" on:click={() => {tileClicked = 3}}>
 									<img class="h-full object-contain" src="/pap-logo.png" alt="pap logo" />
                                     {#if tileClicked == 3}
                                     <div class="w-full bg-black text-sm text-white">

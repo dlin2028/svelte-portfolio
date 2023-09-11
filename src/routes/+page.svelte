@@ -1,8 +1,7 @@
 <script>
-	import Activities from "./Activities.svelte";
-import Background from "./Background.svelte";
+    import Background from "./Background.svelte";
 	import Contact from "./Contact.svelte";
-import Hello from "./Hello.svelte";
+    import Hello from "./Hello.svelte";
 	import Projects from "./Projects.svelte";
 	import ThankYou from "./ThankYou.svelte";
 
@@ -24,7 +23,6 @@ import Hello from "./Hello.svelte";
                             <a href="#home" class="mr-5 text-white hover:text-gray-900">Home</a>
                             <a href="#background" class="mr-5 text-white hover:text-gray-900">Background</a>
                             <a href="#projects" class="mr-5 text-white hover:text-gray-900">Projects</a>
-                            <a href="#activities" class="mr-5 text-white hover:text-gray-900">Activities</a>
                             <a href="#contact" class="mr-5 text-white hover:text-gray-900">Contact</a>
                         </nav>
                     </div>
@@ -37,10 +35,7 @@ import Hello from "./Hello.svelte";
 			<section id="projects">
                 <Projects></Projects>
 			</section>
-			<section id="activities">
-                <Activities></Activities>
-			</section>		
-			<section id="contact">
+			<section id="contact" class="p-10">
                 <Contact></Contact>
 			</section>
             <section class="text-white">

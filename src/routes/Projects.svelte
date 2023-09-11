@@ -1,4 +1,4 @@
-<script>
+<script lang="js">
 	import { fade } from 'svelte/transition';
 	import { fly } from 'svelte/transition';
 	import { elasticOut } from 'svelte/easing';
@@ -40,21 +40,30 @@
 	let cardVisible = false;
 	let textVisible = false;
 
+	/**
+     * @type {(number | undefined)[]}
+     */
+	let timeouts = [];
+
 	function actionWhenInViewport(e) {
 		const observer = new IntersectionObserver((entries) => {
 			if (entries[0].isIntersecting) {
 				transmissionVisible = true;
-				setTimeout(() => {
+				timeouts.push(setTimeout(() => {
 					transmissionVisible = false;
 					cardVisible = true;
-					setTimeout(() => {
+					timeouts.push(setTimeout(() => {
 						textVisible = true;
-					}, 1500);
-				}, 1500);
+					}, 1500));
+				}, 1500));
 			} else {
 				transmissionVisible = false;
 				cardVisible = false;
 				textVisible = false;
+
+				for (var i=0; i<timeouts.length; i++) {
+					clearTimeout(timeouts[i]);
+				}
 			}
 		});
 
@@ -73,72 +82,71 @@
 		{#if cardVisible}
 			<div class="w-full h-screen p-6 items-center justify-center flex">
 				<div
-					class="relative flex h-full w-full items-center bg-cyan-500/20"
-					in:project={{ duration: 1500 }}
+					class="relative flex p-6 gap-8 flex-col h-full w-full items-center bg-cyan-500/20"
+					in:project={{ duration: 2500 }}
 				>
 					{#if textVisible}
-						<div class="flex-col w-full p-6 h-full">
 							<div
 								class="w-full text-center font-bold text-5xl text-white"
-								in:typewriter={{ speed: 3.5 }}
+								in:typewriter={{ speed: 2.5 }}
 							>
 								My Projects
 							</div>
 
-                            <div class="border-cyan-500 border bg-gray-400 w-full h-20 text-lg">
-                                <img class="h-full object-contain" src="/ece-logo.jpg" alt="ece logo" />
-                                <div>B.S. In Computer Engineering</div>
-                            </div>
-
-							<div class="xs:flex-col sm:flex sm:h-3/4 relative align-middle">
-								<div class="basis-1/3 px-4 relative bg-black text-white">
-									<img class="h-full object-contain" src="/elc-logo.jpg" alt="elc logo" />
-									<div
-										class="border-cyan-500 border-l-2 border-t-2 absolute left-1 top-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-t-2 border-r-2 absolute top-1 right-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-b-2 border-l-2 absolute bottom-1 left-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-b-2 border-r-2 absolute bottom-1 right-1 h-4 w-4"
-									/>
+							<div class="grid grid-rows-2 grid-cols-2 gap-2 h-full w-full">
+								<div class="bg-[url(/hok.png)] bg-cover w-full h-full relative group flex align-middle">
+									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
+										<div class="w-full h-full flex items-center justify-center absolute p-6">
+											<div class="text-cyan-500 text-6xl w-full text-center">HOK
+											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">HOK offers an online platform for buying and selling sneakers locally. We team up with city sneaker stores for authentication. Sellers drop off, stores verify, and buyers pick up, ensuring safe transactions. This model also boosts store traffic and potential sales.</div>
+											</div>
+										</div>
+									</div>
+									<div class="border-cyan-500 border-l-2 border-t-2 absolute transition-all left-8 top-8 group-hover:left-2 group-hover:top-2 h-2 w-2" />
+									<div class="border-cyan-500 border-t-2 border-r-2 absolute transition-all top-8 right-8 group-hover:top-2 group-hover:right-2 h-2 w-2" />
+									<div class="border-cyan-500 border-b-2 border-l-2 absolute transition-all bottom-8 left-8 group-hover:bottom-2 group-hover:left-2 h-2 w-2" />
+									<div class="border-cyan-500 border-b-2 border-r-2 absolute transition-all bottom-8 right-8 group-hover:bottom-2 group-hover:right-2 h-2 w-2" />
 								</div>
-								<div class="relative basis-1/3 px-4 bg-white text-white">
-									<img class="h-full object-contain" src="/oppo-logo.png" alt="oppo logo" />
-									<div
-										class="border-cyan-500 border-l-2 border-t-2 absolute left-1 top-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-t-2 border-r-2 absolute top-1 right-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-b-2 border-l-2 absolute bottom-1 left-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-b-2 border-r-2 absolute bottom-1 right-1 h-4 w-4"
-									/>
+								<div class="bg-[url(/nolai.png)] bg-cover w-full h-full relative group flex align-middle">
+									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
+										<div class="w-full h-full flex items-center justify-center absolute p-6">
+											<div class="text-cyan-500 text-6xl w-full text-center">NOLAI
+											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">NOLAI is an AI shopping assistant for helping customers find products from the ORIGINS product catalog. It is intended to be the digital analog of an in-store salesperson. These assistants have been proven to decrease customer churn, and increase satisfaction, average purchase price, and purchase rate</div>
+											</div>
+										</div>
+									</div>
+									<div class="border-cyan-500 border-l-2 border-t-2 absolute transition-all left-8 top-8 group-hover:left-2 group-hover:top-2 h-2 w-2" />
+									<div class="border-cyan-500 border-t-2 border-r-2 absolute transition-all top-8 right-8 group-hover:top-2 group-hover:right-2 h-2 w-2" />
+									<div class="border-cyan-500 border-b-2 border-l-2 absolute transition-all bottom-8 left-8 group-hover:bottom-2 group-hover:left-2 h-2 w-2" />
+									<div class="border-cyan-500 border-b-2 border-r-2 absolute transition-all bottom-8 right-8 group-hover:bottom-2 group-hover:right-2 h-2 w-2" />
 								</div>
-								<div class="basis-1/3 relative bg-black text-white">
-									<img class="h-full object-contain" src="/pap-logo.png" alt="pap logo" />
-									<div
-										class="border-cyan-500 border-l-2 border-t-2 absolute left-1 top-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-t-2 border-r-2 absolute top-1 right-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-b-2 border-l-2 absolute bottom-1 left-1 h-4 w-4"
-									/>
-									<div
-										class="border-cyan-500 border-b-2 border-r-2 absolute bottom-1 right-1 h-4 w-4"
-									/>
+								<div class="bg-[url(/ebay.png)] bg-cover w-full h-full relative group flex align-middle">
+									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
+										<div class="w-full h-full flex items-center justify-center absolute p-6">
+											<div class="text-cyan-500 text-6xl w-full text-center">EBAY-UMLC
+											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">I competed in a challenge focused on Named Entity Recognition (NER), a key task in NLP, specifically targeting eBay listing titles. The goal was to extract and label various aspects, like "Brand name", from item titles. Not all titles contained every aspect, adding to the complexity. I secured the 9th place.</div>
+											</div>
+										</div>
+									</div>
+									<div class="border-cyan-500 border-l-2 border-t-2 absolute transition-all left-8 top-8 group-hover:left-2 group-hover:top-2 h-2 w-2" />
+									<div class="border-cyan-500 border-t-2 border-r-2 absolute transition-all top-8 right-8 group-hover:top-2 group-hover:right-2 h-2 w-2" />
+									<div class="border-cyan-500 border-b-2 border-l-2 absolute transition-all bottom-8 left-8 group-hover:bottom-2 group-hover:left-2 h-2 w-2" />
+									<div class="border-cyan-500 border-b-2 border-r-2 absolute transition-all bottom-8 right-8 group-hover:bottom-2 group-hover:right-2 h-2 w-2" />
 								</div>
-								<div class="w-full h-full absolute bg-cyan-400/10" />
+								<div class="bg-[url(/sped.png)] bg-cover w-full h-full relative group flex align-middle">
+									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
+										<div class="w-full h-full flex items-center justify-center absolute p-6">
+											<div class="text-cyan-500 text-6xl w-full text-center">SUPERSPED
+											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">A racing game built in Unity Engine</div>
+											</div>
+										</div>
+									</div>
+									<div class="border-cyan-500 border-l-2 border-t-2 absolute transition-all left-8 top-8 group-hover:left-2 group-hover:top-2 h-2 w-2" />
+									<div class="border-cyan-500 border-t-2 border-r-2 absolute transition-all top-8 right-8 group-hover:top-2 group-hover:right-2 h-2 w-2" />
+									<div class="border-cyan-500 border-b-2 border-l-2 absolute transition-all bottom-8 left-8 group-hover:bottom-2 group-hover:left-2 h-2 w-2" />
+									<div class="border-cyan-500 border-b-2 border-r-2 absolute transition-all bottom-8 right-8 group-hover:bottom-2 group-hover:right-2 h-2 w-2" />
+								</div>
 							</div>
-						</div>
 					{/if}
 					<div class="border-cyan-500 border-l-2 border-t-2 absolute -left-1 -top-1 h-4 w-4" />
 					<div class="border-cyan-500 border-t-2 border-r-2 absolute -top-1 -right-1 h-4 w-4" />
