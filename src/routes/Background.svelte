@@ -8,7 +8,7 @@
 	<div class="flex flex-col gap-2 w-full">
 		<div class="w-full h-20 {currSelected == 1 ? "h-72" : ""} p-0 border border-black group transition-all">
 			<button class="w-full h-20 bg-black flex justify-center" on:click={() => {currSelected = 1}}>
-				<img class="h-20" src="/elc-logo.jpg" alt="elc logo" />
+				<img class="h-20" src="{base}/elc-logo.jpg" alt="elc logo" />
 			</button>
 		{#if currSelected == 1}
 			<div class="text-xl">
