@@ -1,5 +1,6 @@
 <script>
 	let currSelected = 1;
+	import { base } from '$app/paths';
 </script>
 
 <div class="h-full w-full bg-white p-10">
@@ -18,7 +19,7 @@
 		</div>
 		<div class="w-full border border-black">
 			<button class="w-full flex justify-center" on:click={() => {currSelected = 2}}>
-				<img class="h-20" src="/oppo-logo.png" alt="oppo logo" />
+				<img class="h-20" src="{base}/oppo-logo.png" alt="oppo logo" />
 
 			</button>
 			{#if currSelected == 2}
@@ -30,7 +31,7 @@
 		</div>
 		<div class="w-full border border-black">
 			<button class="w-full h-20 bg-black flex justify-center" on:click={() => {currSelected = 3}}>
-				<img class="h-20" src="/pap-logo.png" alt="pap logo" />
+				<img class="h-20" src="{base}/pap-logo.png" alt="pap logo" />
 			</button>
 
 			{#if currSelected == 3}
@@ -42,7 +43,7 @@
 		</div>
 		<div class="w-full border border-black ">
 			<button class="w-full h-20 bg-black flex justify-center" on:click={() => {currSelected = 4}}>
-				<img class="h-20" src="/ece-logo.jpg" alt="ece logo" />
+				<img class="h-20" src="{base}/ece-logo.jpg" alt="ece logo" />
 			</button>
 
 			{#if currSelected == 4}
