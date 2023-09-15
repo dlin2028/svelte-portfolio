@@ -15,9 +15,9 @@
                 David Lin
             </div>
             <div class="flex sm:flex-col md:flex-row w-full items-center px-20 py-5 gap-10">
-                <div class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">Resume</div>
-                <div class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">GitHub</div>
-                <div class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">LinkedIn</div>
+                <a class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center" href="https://davidzl2.web.illinois.edu/resume.pdf">Resume</a>
+                <a class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center" href="https://github.com/dlin2028">GitHub</a>
+                <a class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center" href="https://www.linkedin.com/in/davidzl2/">LinkedIn</a>
             </div>
         </div>
         {/if}
