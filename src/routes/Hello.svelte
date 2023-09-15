@@ -14,10 +14,10 @@
                 Nice to meet you, I'm <br />
                 David Lin
             </div>
-            <div class="flex flex-col sm:flex-row w-full items-center px-20 py-5 gap-10">
-                <div class="basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">Resume</div>
-                <div class="basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">GitHub</div>
-                <div class="basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">LinkedIn</div>
+            <div class="flex sm:flex-col md:flex-row w-full items-center px-20 py-5 gap-10">
+                <div class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">Resume</div>
+                <div class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">GitHub</div>
+                <div class="sm:w-32 md:basis-1/3 h-12 text-white justify-center text-sm bg-teal-800 border flex items-center">LinkedIn</div>
             </div>
         </div>
         {/if}

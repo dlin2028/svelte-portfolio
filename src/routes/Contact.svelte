@@ -1,7 +1,14 @@
 <div class="w-full bg-gray-100/10 h-full flex items-center border">
     <div class="w-full text-center font-bold text-5xl text-white p-10">
         Contact Me
-        <form
+
+        <div class="text-4xl">
+            <br>
+            dlin2028@gmail.com
+            <br>
+            310-422-2358
+        </div>
+        <!-- <form
             class="pt-8 text-base leading-6 space-y-4 text-white sm:text-lg sm:leading-7 -mb-8"
         >
             <label
@@ -51,6 +58,6 @@
                     Send
                 </button>
             </div>
-        </form>
+        </form> -->
     </div>
 </div>

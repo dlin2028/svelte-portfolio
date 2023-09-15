@@ -97,7 +97,7 @@
 								<div class="bg-[url(/hok.png)] bg-cover w-full h-full relative group flex align-middle">
 									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
 										<div class="w-full h-full flex items-center justify-center absolute p-6">
-											<div class="text-cyan-500 text-6xl w-full text-center">HOK
+											<div class="text-cyan-500 text-2xl md:text-6xl w-full text-center">HOK
 											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">HOK offers an online platform for buying and selling sneakers locally. We team up with city sneaker stores for authentication. Sellers drop off, stores verify, and buyers pick up, ensuring safe transactions. This model also boosts store traffic and potential sales.</div>
 											</div>
 										</div>
@@ -109,11 +109,11 @@
 								</div>
 								<div class="bg-[url(/nolai.png)] bg-cover w-full h-full relative group flex align-middle">
 									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
-										<div class="w-full h-full flex items-center justify-center absolute p-6">
-											<div class="text-cyan-500 text-6xl w-full text-center">NOLAI
+										<a class="w-full h-full flex items-center justify-center absolute p-6" href="https://nolai-1f56593a2330.herokuapp.com/static/index.html">
+											<div class="text-cyan-500 text-2xl md:text-6xl w-full text-center">NOLAI
 											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">NOLAI is an AI shopping assistant for helping customers find products from the ORIGINS product catalog. It is intended to be the digital analog of an in-store salesperson. These assistants have been proven to decrease customer churn, and increase satisfaction, average purchase price, and purchase rate</div>
 											</div>
-										</div>
+										</a>
 									</div>
 									<div class="border-cyan-500 border-l-2 border-t-2 absolute transition-all left-8 top-8 group-hover:left-2 group-hover:top-2 h-2 w-2" />
 									<div class="border-cyan-500 border-t-2 border-r-2 absolute transition-all top-8 right-8 group-hover:top-2 group-hover:right-2 h-2 w-2" />
@@ -122,11 +122,11 @@
 								</div>
 								<div class="bg-[url(/ebay.png)] bg-cover w-full h-full relative group flex align-middle">
 									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
-										<div class="w-full h-full flex items-center justify-center absolute p-6">
-											<div class="text-cyan-500 text-6xl w-full text-center">EBAY-UMLC
+										<a class="w-full h-full flex items-center justify-center absolute p-6" href="https://eval.ai/web/challenges/challenge-page/1733/leaderboard">
+											<div class="text-cyan-500 text-2xl md:text-6xl w-full text-center">EBAY-UMLC
 											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">I competed in a challenge focused on Named Entity Recognition (NER), a key task in NLP, specifically targeting eBay listing titles. The goal was to extract and label various aspects, like "Brand name", from item titles. Not all titles contained every aspect, adding to the complexity. I secured the 9th place.</div>
 											</div>
-										</div>
+										</a>
 									</div>
 									<div class="border-cyan-500 border-l-2 border-t-2 absolute transition-all left-8 top-8 group-hover:left-2 group-hover:top-2 h-2 w-2" />
 									<div class="border-cyan-500 border-t-2 border-r-2 absolute transition-all top-8 right-8 group-hover:top-2 group-hover:right-2 h-2 w-2" />
@@ -136,7 +136,7 @@
 								<div class="bg-[url(/sped.png)] bg-cover w-full h-full relative group flex align-middle">
 									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
 										<div class="w-full h-full flex items-center justify-center absolute p-6">
-											<div class="text-cyan-500 text-6xl w-full text-center">SUPERSPED
+											<div class="text-cyan-500 text-2xl md:text-6xl w-full text-center">SUPERSPED
 											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">A racing game built in Unity Engine</div>
 											</div>
 										</div>
