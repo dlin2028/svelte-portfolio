@@ -96,11 +96,11 @@
 							<div class="grid grid-rows-2 grid-cols-2 gap-2 h-full w-full">
 								<div class="bg-[url(/hok.png)] bg-cover w-full h-full relative group flex align-middle">
 									<div class="bg-cyan-900/80 group-hover:bg-cyan-900/95 w-full h-full absolute transition-all">
-										<div class="w-full h-full flex items-center justify-center absolute p-6">
+										<a class="w-full h-full flex items-center justify-center absolute p-6" href="https://hok.ddns.net:5225/">
 											<div class="text-cyan-500 text-2xl md:text-6xl w-full text-center">HOK
 											<div class="text-cyan-500 group-hover:block hidden transition-all text-base w-full text-center">HOK offers an online platform for buying and selling sneakers locally. We team up with city sneaker stores for authentication. Sellers drop off, stores verify, and buyers pick up, ensuring safe transactions. This model also boosts store traffic and potential sales.</div>
 											</div>
-										</div>
+										</a>
 									</div>
 									<div class="border-cyan-500 border-l-2 border-t-2 absolute transition-all left-8 top-8 group-hover:left-2 group-hover:top-2 h-2 w-2" />
 									<div class="border-cyan-500 border-t-2 border-r-2 absolute transition-all top-8 right-8 group-hover:top-2 group-hover:right-2 h-2 w-2" />
