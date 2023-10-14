@@ -54,8 +54,8 @@
 					cardVisible = true;
 					timeouts.push(setTimeout(() => {
 						textVisible = true;
-					}, 1500));
-				}, 1500));
+					}, 1000));
+				}, 500));
 			} else {
 				transmissionVisible = false;
 				cardVisible = false;
@@ -74,7 +74,7 @@
 <div class="w-full bg-[url('/background-large.jpg')] h-full flex items-center">
 	<div class="w-full bg-[url('/glow.png')] h-full flex items-center">
 		{#if transmissionVisible}
-			<div class="w-full text-center text-5xl text-cyan-400" in:typewriter={{speed:3}}>
+			<div class="w-full text-center text-5xl text-cyan-400" in:typewriter={{speed:5}}>
 				INCOMING TRANSMISSION...
 			</div>
 		{/if}
@@ -83,7 +83,7 @@
 			<div class="w-full h-screen p-6 items-center justify-center flex">
 				<div
 					class="relative flex p-6 gap-8 flex-col h-full w-full items-center bg-cyan-500/20"
-					in:project={{ duration: 2500 }}
+					in:project={{ duration: 1500 }}
 				>
 					{#if textVisible}
 							<div
